@@ -30,7 +30,7 @@ var userSchema = new Schema({
     },
     //Core information
     name:{type: String},
-    username: {type: String, lowercase: true, unique: true, index: true},
+    username: {type: String, lowercase: true, index: true},
     middleNames:[String],
     current_location: {
         type: {
