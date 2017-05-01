@@ -32,7 +32,8 @@ api.post('/slack/everyone', function(req, res, next) {
                         "*Country:* "+ user.country + "\n" +
                         "*Website:* " + user.website_url ,
                         mrkdwn_in: ["text", "pretext"]
-                    })
+                    });
+                    return user;
                 });
                 res.json({
                     attachments: result
