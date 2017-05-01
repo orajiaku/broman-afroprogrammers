@@ -26,13 +26,13 @@ api.post('/slack/everyone', function(req, res, next) {
                         image_url: user.profilePictureUrl ? user.profilePictureUrl : "https://s3-us-west-2.amazonaws.com/afro-programmers/bro_icom.png",
                         text: "*Name:* "+ user.name+ "\n" +
                         "*Current job:* "+ user.current_job + "\n" +
-                        "*LinkedIn:* "+ user.linkedInUrl
+                        "*LinkedIn:* "+ user.linkedInUrl,
+                        username: "markdownbot",
+                        mrkdwn: true
                     })
                 });
                 res.json({
-                    attachments: result,
-                    username: "markdownbot",
-                    mrkdwn: true
+                    attachments: result
                 });
             }else{
                 res.json({text: "Database currently empty"})
