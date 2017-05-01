@@ -31,6 +31,7 @@ api.post('/slack/everyone', function(req, res, next) {
                 });
                 res.json({
                     attachments: result,
+                    username: "markdownbot",
                     mrkdwn: true
                 });
             }else{
