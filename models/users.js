@@ -39,14 +39,7 @@ var userSchema = new Schema({
         },
         coordinates: {type: [Number], default: [0,0]}
     },
-    email:{type: String, index: true, unique: true,
-        validate : {
-            validator : function(v){
-                return /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(v);
-            },
-            message: '{VALUE} is not a valid email!'
-        },
-        immutable: true
+    email:{type: String, index: true, unique: true
     },
     password: {type: String},
     profilePictureUrl: {type: String},
