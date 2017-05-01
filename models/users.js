@@ -39,7 +39,7 @@ var userSchema = new Schema({
         },
         coordinates: {type: [Number], default: [0,0]}
     },
-    email:{type: String, required: true, index: true, unique: true,
+    email:{type: String, index: true, unique: true,
         validate : {
             validator : function(v){
                 return /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(v);
@@ -48,7 +48,7 @@ var userSchema = new Schema({
         },
         immutable: true
     },
-    password: {type: String, required: true},
+    password: {type: String},
     profilePictureUrl: {type: String},
     country: {type: String},
     projects: [{
@@ -65,6 +65,9 @@ var userSchema = new Schema({
             type: String
         }
     }],
+    website_url: {
+        type: String
+    },
     linkedInUrl: {type: String},
     skills: [String],
     current_job: {type: String},
