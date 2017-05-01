@@ -24,11 +24,11 @@ api.post('/slack/everyone', function(req, res, next) {
                 users.map(function (user) {
                     result.push({
                         image_url: user.profilePictureUrl ? user.profilePictureUrl : "https://s3-us-west-2.amazonaws.com/afro-programmers/bro_icom.png",
-                        text: "*Name:* "+ user.name+ "\n" +
+                        pretext: "*"+user.name+"*",
+                        text:
                         "*Current job:* "+ user.current_job + "\n" +
                         "*LinkedIn:* "+ user.linkedInUrl,
-                        username: "markdownbot",
-                        mrkdwn: true
+                        "mrkdwn_in": ["text", "pretext"]
                     })
                 });
                 res.json({
