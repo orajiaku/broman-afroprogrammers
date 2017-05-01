@@ -13,10 +13,7 @@ var bot = new SlackBot({
 });
 
 api.post('/slack/everyone', function(req, res, next) {
-    /*req.body['user_name'],
-        req.body['text'].substring(1,req.body['text'].length - 1 ),
-        req.body['channel_name'],
-        req.body['response_url']*/
+
 
     Users.find({}, function (err, users) {
         if(err){
@@ -24,17 +21,26 @@ api.post('/slack/everyone', function(req, res, next) {
             res.json({});
         }else{
             res.json({
-                image: "",
-                name:"Dalu "
+                attachments: [
+                    {
+                        icon_url: 'https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2017-03-31/163706802022_759cbc799ce3053c0c14_96.png',
+                        text: 'LOVE IT',
+                        image_url: 'http://www.planwallpaper.com/static/images/9-credit-1.jpg'
+                    }
+                ]
             });
         }
     });
-    //
-    // var result = [];
-    //
-    //
-    //
-    // res.json();
+});
+
+api.post('/users', function (req, res, next) {
+   Users.create(req.body, function (err, user) {
+       if(err){
+           res.json(err);
+       }else{
+           res.json(user);
+       }
+   });
 });
 
 module.exports = api;
