@@ -30,7 +30,8 @@ api.post('/slack/everyone', function(req, res, next) {
                     })
                 });
                 res.json({
-                    attachments: result
+                    attachments: result,
+                    mrkdwn: true
                 });
             }else{
                 res.json({text: "Database currently empty"})
