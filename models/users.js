@@ -5,9 +5,7 @@
 
 var db = require('../config/mongodb');
 var immutablePlugin = require('mongoose-immutable');
-var statusCodes = require('../config/statusCodes');
 
-var tools = require('../config/tools');
 var Promise = require('bluebird');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
