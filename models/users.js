@@ -63,6 +63,7 @@ var userSchema = new Schema({
             type: String
         }
     }],
+    linkedInUrl: {type: String},
     skills: [String],
     current_job: {type: String},
     city: {type: String},
