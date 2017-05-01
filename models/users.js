@@ -58,6 +58,7 @@ var userSchema = new Schema({
             type: String
         }
     }],
+    interests: {type: [String], index: true},
     website_url: {
         type: String
     },
