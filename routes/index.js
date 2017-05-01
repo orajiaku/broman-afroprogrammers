@@ -27,8 +27,10 @@ api.post('/slack/everyone', function(req, res, next) {
                         pretext: "*"+user.name+"*",
                         text:
                         "*Current job:* "+ user.current_job + "\n" +
-                        "*LinkedIn:* "+ user.linkedInUrl,
-                        "mrkdwn_in": ["text", "pretext"]
+                        "*LinkedIn:* "+ user.linkedInUrl + "\n" +
+                        "*City:* "+user.city + "\n" +
+                        "*Country:* "+ user.country + "\n",
+                        mrkdwn_in: ["text", "pretext"]
                     })
                 });
                 res.json({
