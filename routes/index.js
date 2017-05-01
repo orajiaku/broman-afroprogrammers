@@ -24,9 +24,9 @@ api.post('/slack/everyone', function(req, res, next) {
                 users.map(function (user) {
                     result.push({
                         image_url: user.profilePictureUrl ? user.profilePictureUrl : "https://s3-us-west-2.amazonaws.com/afro-programmers/bro_icom.png",
-                        text: "<strong>Name:</strong> "+ user.name+ "\n" +
-                        "<strong>Current job:</strong> "+ user.current_job + "\n" +
-                        "<strong>LinkedIn:</strong> "+ user.linkedInUrl
+                        text: "*Name:* "+ user.name+ "\n" +
+                        "*Current job:* "+ user.current_job + "\n" +
+                        "*LinkedIn:* "+ user.linkedInUrl
                     })
                 });
                 res.json({
