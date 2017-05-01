@@ -52,7 +52,9 @@ var userSchema = new Schema({
     profilePictureUrl: {type: String},
     country: {type: String},
     projects: [{
-        name: {},
+        name: {
+            type: String
+        },
         description: {
             type: String
         },
