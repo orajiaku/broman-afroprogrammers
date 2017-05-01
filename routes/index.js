@@ -29,7 +29,8 @@ api.post('/slack/everyone', function(req, res, next) {
                         "*Current job:* "+ user.current_job + "\n" +
                         "*LinkedIn:* "+ user.linkedInUrl + "\n" +
                         "*City:* "+user.city + "\n" +
-                        "*Country:* "+ user.country + "\n",
+                        "*Country:* "+ user.country + "\n" +
+                        "*Website:* " + user.website_url ,
                         mrkdwn_in: ["text", "pretext"]
                     })
                 });
