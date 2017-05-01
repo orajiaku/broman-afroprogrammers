@@ -29,12 +29,12 @@ api.post('/slack/everyone', function(req, res, next) {
             });
         }
     });
-
-    var result = [];
-
-
-
-    res.json();
+    //
+    // var result = [];
+    //
+    //
+    //
+    // res.json();
 });
 
 module.exports = api;
