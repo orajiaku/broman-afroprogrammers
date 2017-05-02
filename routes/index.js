@@ -14,7 +14,7 @@ var bot = new SlackBot({
 
 api.post('/slack/everyone', function(req, res, next) {
 
-    var result = []
+    var result = [];
     Users.find({}, function (err, users) {
         if(err){
             console.log(err);
@@ -30,7 +30,7 @@ api.post('/slack/everyone', function(req, res, next) {
                         "*Projects:* \n";
 
                     for (var i = 0; i < user.projects; i++){
-                        const proj = user.properties[i];
+                        const proj = user.projects[i];
                         toSend += "\t";
                         toSend += "Name : " + proj.name + "\n";
                         toSend += "\t";
@@ -39,7 +39,7 @@ api.post('/slack/everyone', function(req, res, next) {
                         toSend += "Repo : " + proj.repository_url + "\n";
                     }
 
-                    toSend += "Interests: " + user.interests.join(' , ') + "\n";
+                    toSend += "*Interests:* " + user.interests.join(' , ') + "\n";
 
                     result.push({
                         image_url: user.profilePictureUrl ? user.profilePictureUrl : "https://s3-us-west-2.amazonaws.com/afro-programmers/bro_icom.png",
