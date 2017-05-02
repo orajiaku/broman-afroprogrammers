@@ -39,8 +39,7 @@ var userSchema = new Schema({
         },
         coordinates: {type: [Number], default: [0,0]}
     },
-    email:{type: String, index: true, unique: true
-    },
+    email:{type: String, index: true},
     password: {type: String},
     profilePictureUrl: {type: String},
     country: {type: String},

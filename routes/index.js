@@ -22,15 +22,21 @@ api.post('/slack/everyone', function(req, res, next) {
         }else{
             if(users){
                 users.map(function (user) {
-                    result.push({
-                        image_url: user.profilePictureUrl ? user.profilePictureUrl : "https://s3-us-west-2.amazonaws.com/afro-programmers/bro_icom.png",
-                        pretext: "*"+user.name+"*",
-                        text:
-                        "*Current job:* "+ user.current_job + "\n" +
+                    var toSend = "*Current job:* "+ user.current_job + "\n" +
                         "*LinkedIn:* "+ user.linkedInUrl + "\n" +
                         "*City:* "+user.city + "\n" +
                         "*Country:* "+ user.country + "\n" +
-                        "*Website:* " + user.website_url ,
+                        "*Website:* " + user.website_url + "\n"+
+                        "*Projects:* \n";
+
+                    for (var i = 0; i < user.projects; i++){
+                        toSend += "\t"
+                        toSend += "Name :"
+                    }
+                    result.push({
+                        image_url: user.profilePictureUrl ? user.profilePictureUrl : "https://s3-us-west-2.amazonaws.com/afro-programmers/bro_icom.png",
+                        pretext: "*"+user.name+"*",
+                        text: toSend,
                         mrkdwn_in: ["text", "pretext"]
                     });
                     return user;
