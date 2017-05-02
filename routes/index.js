@@ -30,9 +30,17 @@ api.post('/slack/everyone', function(req, res, next) {
                         "*Projects:* \n";
 
                     for (var i = 0; i < user.projects; i++){
-                        toSend += "\t"
-                        toSend += "Name :"
+                        const proj = user.properties[i];
+                        toSend += "\t";
+                        toSend += "Name : " + proj.name + "\n";
+                        toSend += "\t";
+                        toSend += "Description : " + proj.description + "\n";
+                        toSend += "\t";
+                        toSend += "Repo : " + proj.repository_url + "\n";
                     }
+
+                    toSend += "Interests: " + user.interests.join(' , ') + "\n";
+
                     result.push({
                         image_url: user.profilePictureUrl ? user.profilePictureUrl : "https://s3-us-west-2.amazonaws.com/afro-programmers/bro_icom.png",
                         pretext: "*"+user.name+"*",
