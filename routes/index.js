@@ -74,9 +74,9 @@ api.post('/users', function (req, res, next) {
 
 api.post('/channel', function (req, res, next) {
     var params = {
-        text: req.body.message
+        icon_emoji: ':desktop_computer:'
     };
-    bot.postMessageToChannel(req.body.channel, 'meow!', params);
+    bot.postMessageToChannel(req.body.channel, req.body.message, params);
 });
 
 module.exports = api;
