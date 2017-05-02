@@ -74,7 +74,7 @@ api.post('/users', function (req, res, next) {
 
 api.post('/channel', function (req, res, next) {
     var params = {
-        icon_emoji: ':desktop_computer:'
+        icon_url: 'https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2017-05-01/176279838560_adc5324a264f4965325f_96.png'
     };
     bot.postMessageToChannel(req.body.channel, req.body.message, params);
 });
