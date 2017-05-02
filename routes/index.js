@@ -29,14 +29,14 @@ api.post('/slack/everyone', function(req, res, next) {
                         "*Website:* " + user.website_url + "\n"+
                         "*Projects:* \n";
 
-                    for (var i = 0; i < user.projects; i++){
+                    for (var i = 0; i < user.projects.length; i++){
                         const proj = user.projects[i];
-                        console.log(proj);
-                        //toSend += "\t";
+                        //console.log(proj);
+                        toSend += "\t";
                         toSend += "Name : " + proj.name + "\n";
-                        //toSend += "\t";
+                        toSend += "\t";
                         toSend += "Description : " + proj.description + "\n";
-                        //toSend += "\t";
+                        toSend += "\t";
                         toSend += "Repo : " + proj.repository_url + "\n";
                     }
 
