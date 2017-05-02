@@ -39,6 +39,7 @@ api.post('/slack/everyone', function(req, res, next) {
                         toSend += "*Description :* " + proj.description + "\n";
                         toSend += "\t";
                         toSend += "*Repo :* " + proj.repository_url + "\n";
+                        toSend += "\n";
                     }
 
                     toSend += "*Interests:* " + user.interests.join(' , ') + "\n";
