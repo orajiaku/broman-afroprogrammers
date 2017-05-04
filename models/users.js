@@ -42,6 +42,7 @@ var userSchema = new Schema({
     email:{type: String, index: true},
     password: {type: String},
     profilePictureUrl: {type: String},
+    degrees: [String],
     country: {type: String},
     projects: [{
         name: {

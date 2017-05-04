@@ -31,7 +31,6 @@ api.post('/slack/everyone', function(req, res, next) {
 
                     for (var i = 0; i < user.projects.length; i++){
                         const proj = user.projects[i];
-                        //console.log(proj);
                         toSend += "\n";
                         toSend += "\t";
                         toSend += "*Name :* " + proj.name + "\n";
@@ -77,6 +76,7 @@ api.post('/channel', function (req, res, next) {
         //icon_url: 'https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2017-05-01/176279838560_adc5324a264f4965325f_96.png'
     };
     bot.postMessageToChannel(req.body.channel, req.body.message, params);
+    res.json({success: "true"});
 });
 
 module.exports = api;
