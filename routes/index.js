@@ -8,8 +8,8 @@ var Users = require(path.resolve() + '/models/users');
 
 // create a bot
 var bot = new SlackBot({
-    token: 'xoxb-176384464513-5rDFSyXP7NPgqDu6NFHBWkIu', // Add a bot https://my.slack.com/services/new/bot and put the token
-    name: 'Bro Man'
+    token: process.env.slackToken, // Add a bot https://my.slack.com/services/new/bot and put the token
+    name: process.env.slackBotName
 });
 
 api.post('/slack/everyone', function(req, res, next) {
