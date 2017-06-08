@@ -5,6 +5,13 @@ var path = require('path');
 
 var Users = require(path.resolve() + '/models/users');
 
+if(process.env.slackToken){
+    console.log("Token Provided");
+}
+
+if(process.env.slackBotName){
+    console.log("slack bot name provided")
+}
 
 // create a bot
 var bot = new SlackBot({
